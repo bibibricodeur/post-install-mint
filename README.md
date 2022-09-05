@@ -1,5 +1,7 @@
 # mint-post-install
 
+![Screenshot](screenshot.png)
+
 ## Installation
 
 ## Usage
