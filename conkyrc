@@ -79,6 +79,9 @@ ${font sans-serif:normal:size=8}${execi 1000 grep model /proc/cpuinfo | cut -d :
 ${font sans-serif:normal:size=8}${cpugraph cpu1}
 CPU: ${cpu cpu1}% ${cpubar cpu1}
 
+${font sans-serif:bold:size=10}TEMPERATURE ${hr 2}
+${font sans-serif:normal:size=8}${execi 30 cat /sys/class/thermal/thermal_zone0/temp | awk '{print substr($0,0,2)}' }°Celsius
+
 ${font sans-serif:bold:size=10}MEMOIRE ${hr 2}
 ${font sans-serif:normal:size=8}RAM $alignc $mem / $memmax $alignr $memperc%
 $membar
