@@ -81,7 +81,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # app-get
     #***
-	sudo apt-get install brasero docker.io gimp handbrake filezilla git inkscape nmap nodejs npm printrun samba tree vokoscreen whois -y
+	sudo apt-get install brasero docker.io gimp handbrake filezilla git inkscape nmap nodejs npm printrun samba sqlitebrowser tree vokoscreen whois -y
     #***
 
     #***
