@@ -63,7 +63,7 @@ installer() {
 if (whiptail --title "Post installer" --yesno "Installer ?" 15 45); then
 	echo $(tput bold; tput setaf 2)"Installer OK."$(tput sgr0)
 	# bloc d’instructions 
-	sudo apt-get install cheese chromium-browser conky-all gnome-games gparted gsmartcontrol keepassxc mc p7zip-rar rpi-imager telegram-desktop thunderbird thunderbird-locale-fr vlc vim -y   
+	sudo apt-get install cheese chromium-browser conky-all gnome-games gparted gsmartcontrol keepassxc mc p7zip-rar telegram-desktop thunderbird thunderbird-locale-fr vlc vim -y   
 else
 	echo $(tput bold; tput setaf 3)"Installer KO."$(tput sgr0)
 fi
@@ -81,7 +81,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # app-get
     #***
-	sudo apt-get install brasero docker.io gimp handbrake filezilla git inkscape nmap nodejs npm printrun samba sqlitebrowser tree vokoscreen whois -y
+	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap nodejs npm printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
     #***
 
     #***
@@ -99,6 +99,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     # https://apt.syncthing.net/
     #***      
     # Add the release PGP keys:
+    # Add the release PGP keys:
     sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
     # Add the "stable" channel to your APT sources:
     echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
@@ -107,7 +108,6 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo apt-get update
     sudo apt-get install syncthing        
     sudo systemctl enable syncthing@$SUDO_USER.service
-    #sudo systemctl start syncthing@$SUDO_USER.service
 
     #***
     # WordPress
