@@ -1,4 +1,4 @@
-# mint-post-install
+# post-install-mint
 
 ![Screenshot](screenshot.png)
 
