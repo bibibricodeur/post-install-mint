@@ -81,7 +81,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # app-get
     #***
-	sudo apt-get install brasero gimp handbrake hugo filezilla git inkscape nmap npm printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
+	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap npm printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
     #***
     
     #***
@@ -90,11 +90,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo rm /etc/apt/preferences.d/nosnap.pref
     sudo apt-get install snapd 
 
-    #sudo snap install hugo
-    
-    #***
-    # Brave flatpak
-    # ***
+    sudo snap install --classic code
 
     #***
     # Docker
@@ -109,10 +105,10 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #newgrp docker 
 
     #***
-    # Nodejs 18 LTS
+    # Nodejs 19 
     # https://github.com/nodesource/distributions/blob/master/README.md
     # *** 
-    curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+    curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
     sudo apt-get install -y nodejs
 
     #***
@@ -150,9 +146,14 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # Composer après avoir installer Xampp
     #***       
-    #   sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
-    #   sudo mv composer.phar /usr/local/bin/composer
-    #   sudo ln -s /opt/lampp/bin/php /usr/local/bin/php
+    # sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
+    # sudo mv composer.phar /usr/local/bin/composer
+    # sudo ln -s /opt/lampp/bin/php /usr/local/bin/php
+    
+    #***
+    # NordVpn
+    #***
+    sh <(wget -qO - https://downloads.nordcdn.com/apps/linux/install.sh)
     
 else
 	echo $(tput bold; tput setaf 3)"Développer KO."$(tput sgr0)
