@@ -63,7 +63,7 @@ installer() {
 if (whiptail --title "Post installer" --yesno "Installer ?" 15 45); then
 	echo $(tput bold; tput setaf 2)"Installer OK."$(tput sgr0)
 	# bloc d’instructions 
-	sudo apt-get install cheese chromium-browser conky-all gnome-games gparted gsmartcontrol keepassxc mc p7zip-rar telegram-desktop thunderbird thunderbird-locale-fr vlc vim -y   
+	sudo apt-get install cheese chromium-browser conky-all firefox-locale-fr gimp-help-fr gnome-games gparted gsmartcontrol keepassxc language-pack-gnome-fr mc p7zip-rar telegram-desktop thunderbird thunderbird-locale-fr vlc vim -y   
 else
 	echo $(tput bold; tput setaf 3)"Installer KO."$(tput sgr0)
 fi
