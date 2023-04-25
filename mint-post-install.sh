@@ -147,6 +147,14 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     # sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
     # sudo mv composer.phar /usr/local/bin/composer
     # sudo ln -s /opt/lampp/bin/php /usr/local/bin/php
+
+    #***
+    # https://wp-cli.org/fr/
+    # wp-cli
+    #*** 
+    # curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    # chmod +x wp-cli.phar
+    # sudo mv wp-cli.phar /usr/local/bin/wp        
     
     #***
     # NordVpn
