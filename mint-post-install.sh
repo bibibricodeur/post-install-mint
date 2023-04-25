@@ -90,8 +90,6 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo rm /etc/apt/preferences.d/nosnap.pref
     sudo apt-get install snapd 
 
-    sudo snap install --classic code
-
     #***
     # Docker
     #***
