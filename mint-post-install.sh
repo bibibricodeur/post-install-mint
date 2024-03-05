@@ -76,12 +76,13 @@ installer
 developper() {
  # If you cannot understand this, read Bash_Shell_Scripting#if_statements again.
 if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
-	echo $(tput bold; tput setaf 2)"Développer OK."$(tput sgr0)
+    echo $(tput bold; tput setaf 2)"Développer OK."$(tput sgr0)
 	# bloc d’instructions 
     #***
     # app-get
     #***
-	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap npm printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
+	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap npm printrun python3-django python3-djangorestframework samba sqlitebrowser rpi-imager tree vokoscreen whois -y
+    # deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
     #***
     
     #***
@@ -93,20 +94,23 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # Docker
     #***
-    #sudo apt -y install apt-transport-https ca-certificates curl software-properties-common
-    #sudo apt -y remove docker docker-engine docker.io containerd runc
-    #curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-    #echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    #sudo apt update
-    #sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-    #sudo usermod -aG docker $USER
-    #newgrp docker 
+    #sudo apt-get install docker.io
+    #sudo apt-get install docker-compose
+    
+    #sudo usermod -aG docker ${USER}
+
+    #sudo rm -rf /var/lib/docker /etc/docker
+    #sudo groupdel docker
+    #sudo rm -rf /var/run/docker.sock
+
+    # http://devilbox.org/
+    # docker-compose up -d httpd php mysql
 
     #***
-    # Nodejs 19 
-    # https://github.com/nodesource/distributions/blob/master/README.md
+    # Nodejs 21 
+    # https://github.com/nodesource/distributions/
     # *** 
-    curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+    curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
     sudo apt-get install -y nodejs
 
     #***
@@ -133,24 +137,17 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo apt-get update
     sudo apt-get install syncthing        
     sudo systemctl enable syncthing@$SUDO_USER.service
-
-    #***
-    # WordPress
-    #***            
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    chmod +x wp-cli.phar
-    sudo mv wp-cli.phar /usr/local/bin/wp
     
     #***
     # Composer après avoir installer Xampp
     #***       
-    # sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
+    # curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
     # sudo mv composer.phar /usr/local/bin/composer
     # sudo ln -s /opt/lampp/bin/php /usr/local/bin/php
 
     #***
+    # WordPress wp-cli
     # https://wp-cli.org/fr/
-    # wp-cli
     #*** 
     # curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     # chmod +x wp-cli.phar
