@@ -81,15 +81,16 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # app-get
     #***
-	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap npm printrun python3-django python3-djangorestframework samba sqlitebrowser rpi-imager tree vokoscreen whois -y
+	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap npm printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
     # deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
     #***
     
     #***
-    # https://korben.info/installer-snap-linux-mint.html
-    #***
-    sudo rm /etc/apt/preferences.d/nosnap.pref
-    sudo apt-get install snapd 
+    # Composer après avoir installer Xampp
+    #***       
+    # curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
+    # sudo mv composer.phar /usr/local/bin/composer
+    # sudo ln -s /opt/lampp/bin/php /usr/local/bin/php
 
     #***
     # Docker
@@ -105,6 +106,21 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
 
     # http://devilbox.org/
     # docker-compose up -d httpd php mysql
+    
+    #***
+    # Flatpak
+    #***
+    sudo flatpak install flathub com.brave.Browser
+    sudo flatpak install flathub com.vscodium.codium
+    sudo flatpak install flathub com.visualstudio.code
+    sudo flatpak install flathub com.vivaldi.Vivaldi
+    sudo flatpak install flathub com.github.eneshecan.WhatsAppForLinux
+    
+    #***
+    # Git
+    #***
+    #git config --global user.name 
+    #git config --global user.email 
 
     #***
     # Nodejs 21 
@@ -112,16 +128,28 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     # *** 
     curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
     sudo apt-get install -y nodejs
+    
+    #***
+    # NordVpn
+    #***
+    sh <(wget -qO - https://downloads.nordcdn.com/apps/linux/install.sh)
 
     #***
-    # Python pip3
+    # Python
     #***
     sudo apt-get install python3-pip python3-tk -y
-    sudo pip3 install esptool
-    sudo pip3 install thonny
+    sudo python3 -m pip install django
+    sudo python3 -m pip install djangorestframework
+    sudo python3 -m pip install django-tailwind
+    sudo python3 -m pip install esptool
+    sudo python3 -m pip install thonny
     
-    #git config --global user.name 
-    #git config --global user.email 
+    #***
+    # Snap
+    # https://korben.info/installer-snap-linux-mint.html
+    #***
+    #sudo rm /etc/apt/preferences.d/nosnap.pref
+    #sudo apt-get install snapd 
 	
     #***
     # Syncthing
@@ -139,24 +167,12 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo systemctl enable syncthing@$SUDO_USER.service
     
     #***
-    # Composer après avoir installer Xampp
-    #***       
-    # curl -s https://getcomposer.org/installer | /opt/lampp/bin/php
-    # sudo mv composer.phar /usr/local/bin/composer
-    # sudo ln -s /opt/lampp/bin/php /usr/local/bin/php
-
-    #***
     # WordPress wp-cli
     # https://wp-cli.org/fr/
     #*** 
     # curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     # chmod +x wp-cli.phar
     # sudo mv wp-cli.phar /usr/local/bin/wp        
-    
-    #***
-    # NordVpn
-    #***
-    sh <(wget -qO - https://downloads.nordcdn.com/apps/linux/install.sh)
     
 else
 	echo $(tput bold; tput setaf 3)"Développer KO."$(tput sgr0)
