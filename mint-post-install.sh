@@ -112,6 +112,12 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     sudo flatpak install flathub com.brave.Browser
     sudo flatpak install flathub com.vscodium.codium
+    sudo flatpak install flathub org.fritzing.Fritzing
+    sudo flatpak install flathub net.minetest.Minetest
+    sudo flatpak install flathub md.obsidian.Obsidian
+    sudo flatpak install flathub com.obsproject.Studio
+    sudo flatpak install flathub org.telegram.desktop
+    sudo flatpak install flathub com.valvesoftware.Steam
     sudo flatpak install flathub com.visualstudio.code
     sudo flatpak install flathub com.vivaldi.Vivaldi
     sudo flatpak install flathub com.github.eneshecan.WhatsAppForLinux
