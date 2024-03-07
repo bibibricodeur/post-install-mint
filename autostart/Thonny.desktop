@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=python3 /usr/local/bin/thonny
+Name=Thonny
+Comment=Thonny
+Icon=/usr/local/lib/python3.10/dist-packages/thonny/res/thonny.png

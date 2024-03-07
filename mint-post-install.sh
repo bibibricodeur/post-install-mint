@@ -81,7 +81,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # app-get
     #***
-	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap npm printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
+	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
     # deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
     #***
     
@@ -133,7 +133,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     # https://github.com/nodesource/distributions/
     # *** 
     curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
-    sudo apt-get install -y nodejs
+    sudo apt-get install -y nodejs npm
     
     #***
     # NordVpn
@@ -144,11 +144,11 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     # Python
     #***
     sudo apt-get install python3-pip python3-tk -y
-    sudo python3 -m pip install django
-    sudo python3 -m pip install djangorestframework
-    sudo python3 -m pip install django-tailwind
-    sudo python3 -m pip install esptool
-    sudo python3 -m pip install thonny
+    sudo python3 -m pip install django -y
+    sudo python3 -m pip install djangorestframework -y
+    sudo python3 -m pip install django-tailwind -y
+    sudo python3 -m pip install esptool -y
+    sudo python3 -m pip install thonny -y
     
     #***
     # Snap
@@ -178,7 +178,9 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #*** 
     # curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
     # chmod +x wp-cli.phar
-    # sudo mv wp-cli.phar /usr/local/bin/wp        
+    # sudo mv wp-cli.phar /usr/local/bin/wp 
+    
+    suso apt autoremove       
     
 else
 	echo $(tput bold; tput setaf 3)"Développer KO."$(tput sgr0)
