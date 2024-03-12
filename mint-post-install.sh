@@ -110,23 +110,23 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # Flatpak
     #***
-    sudo flatpak install flathub com.brave.Browser
-    sudo flatpak install flathub com.vscodium.codium
-    sudo flatpak install flathub org.fritzing.Fritzing
-    sudo flatpak install flathub net.minetest.Minetest
-    sudo flatpak install flathub md.obsidian.Obsidian
-    sudo flatpak install flathub com.obsproject.Studio
-    sudo flatpak install flathub org.telegram.desktop
-    sudo flatpak install flathub com.valvesoftware.Steam
-    sudo flatpak install flathub com.visualstudio.code
-    sudo flatpak install flathub com.vivaldi.Vivaldi
-    sudo flatpak install flathub com.github.eneshecan.WhatsAppForLinux
+    sudo flatpak install flathub com.brave.Browser -y
+    sudo flatpak install flathub com.vscodium.codium -y
+    sudo flatpak install flathub org.fritzing.Fritzing -y
+    sudo flatpak install flathub net.minetest.Minetest -y
+    sudo flatpak install flathub md.obsidian.Obsidian -y
+    sudo flatpak install flathub com.obsproject.Studio -y
+    sudo flatpak install flathub org.telegram.desktop -y
+    sudo flatpak install flathub com.valvesoftware.Steam -y
+    sudo flatpak install flathub com.visualstudio.code -y
+    sudo flatpak install flathub com.vivaldi.Vivaldi -y
+    sudo flatpak install flathub com.github.eneshecan.WhatsAppForLinux -y
     
     #***
     # Git
     #***
-    #git config --global user.name 
-    #git config --global user.email 
+    #git config --global user.name francois
+    #git config --global user.email francois@chez.lui
 
     #***
     # Nodejs 21 
@@ -144,11 +144,11 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     # Python
     #***
     sudo apt-get install python3-pip python3-tk -y
-    sudo python3 -m pip install django -y
-    sudo python3 -m pip install djangorestframework -y
-    sudo python3 -m pip install django-tailwind -y
-    sudo python3 -m pip install esptool -y
-    sudo python3 -m pip install thonny -y
+    sudo python3 -m pip install django
+    sudo python3 -m pip install djangorestframework 
+    sudo python3 -m pip install django-tailwind 
+    sudo python3 -m pip install esptool
+    sudo python3 -m pip install thonny
     
     #***
     # Snap
