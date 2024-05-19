@@ -81,7 +81,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # app-get
     #***
-	sudo apt-get install brasero gimp handbrake filezilla git inkscape nmap printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
+	sudo apt-get install brasero gimp handbrake filezilla git inkscape minetest nmap postgresql printrun samba sqlitebrowser rpi-imager tree vokoscreen whois -y
     # deb [arch=amd64] https://repo.vivaldi.com/stable/deb/ stable main
     #***
     
@@ -110,10 +110,9 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #***
     # Flatpak
     #***
-    sudo flatpak install flathub com.brave.Browser -y
+    #sudo flatpak install flathub com.brave.Browser -y
     #sudo flatpak install flathub com.vscodium.codium -y
     #sudo flatpak install flathub org.fritzing.Fritzing -y
-    #sudo flatpak install flathub net.minetest.Minetest -y
     #sudo flatpak install flathub md.obsidian.Obsidian -y
     #sudo flatpak install flathub com.obsproject.Studio -y
     #sudo flatpak install flathub org.telegram.desktop -y
@@ -121,6 +120,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo flatpak install flathub com.visualstudio.code -y
     sudo flatpak install flathub com.vivaldi.Vivaldi -y
     #sudo flatpak install flathub com.github.eneshecan.WhatsAppForLinux -y
+    #sudo flatpak uninstall xxx.xxxxxxx.xxxxxx -y
     
     #***
     # Git
@@ -149,6 +149,7 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     sudo python3 -m pip install django-tailwind 
     sudo python3 -m pip install esptool
     sudo python3 -m pip install thonny
+    #sudo python3 -m pip install install psycopg2-binary
     
     #***
     # Snap
