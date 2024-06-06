@@ -129,11 +129,12 @@ if (whiptail --title "Post installer" --yesno "Développer ?" 15 45); then
     #git config --global user.email francois@chez.lui
 
     #***
-    # Nodejs 21 
+    # Nodejs 
     # https://github.com/nodesource/distributions/
     # *** 
-    curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
-    sudo apt-get install -y nodejs npm
+    curl -fsSL https://deb.nodesource.com/setup_current.x -o nodesource_setup.sh
+    sudo -E bash nodesource_setup.sh
+    sudo apt-get install -y nodejs 
     
     #***
     # NordVpn
